@@ -1,0 +1,25 @@
+.headerCont{
+    background: #171a29;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+.searchBox{
+    outline: none !important;
+    border-radius: 5px;
+    border: 1px solid #353743 !important;
+    padding: 10px;
+    height: 38px;
+    min-width: 300px;
+    background: #353743;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.918);
+}
+
+.searchBox::placeholder{
+    color: rgba(255, 255, 255, 0.51);
+}

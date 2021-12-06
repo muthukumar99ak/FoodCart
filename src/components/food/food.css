@@ -1,0 +1,92 @@
+.foodImg{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.foodImg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.foodName{
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.foodPrice{
+    font-size: 15px;
+    margin: 0;
+}
+
+.foodCont{
+    padding: 20px 15px;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.313);
+}
+
+.subHeading{
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.foodLength{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(125, 125, 125);
+}
+
+.pos-relative{
+    position: relative;
+}
+
+.btnCont{
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    left: 0;
+}
+
+.indeCont{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    color: green;
+    border: 1px solid green;
+    border-radius: 5px;
+    overflow: hidden;
+    padding-bottom: 2px;
+    height: 31px;
+}
+
+.indeCont span{
+    line-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 31px;
+}
+
+.indeCont button{
+    width: 25px;
+    height: 31px;
+    font-size: 20px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 25px;
+    border: 0 !important;
+    outline: none !important;
+    background: white;
+    color: green;
+    padding-bottom: 3px;
+}

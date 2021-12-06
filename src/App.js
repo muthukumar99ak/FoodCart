@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Header from './components/header/Header';
+import FoodList from './components/food/FoodList';
+
+import { foodList } from './components/foodListJSON';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const [foods, setFoods] = useState(foodList);
+  const [noRecord, setNoRecord] = useState(false)
+
+  const searchFoods = (e) => {
+    let curValue = e.target.value;
+    let filteredFoods = foodList.filter(food => food.foodname.toLowerCase().includes(curValue.toLowerCase()))
+    filteredFoods.length === 0 ? setNoRecord(true) : setNoRecord(false)
+    setFoods(filteredFoods)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header searchFoods={searchFoods} />
+      <FoodList foods={foods} noRecord={noRecord} />
     </div>
   );
 }
