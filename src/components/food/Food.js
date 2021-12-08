@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector, connect } from "react-redux";
+import { useDispatch, connect } from "react-redux";
 
 const Food = (props) => {
     const [foodCount, setFoodCount] = useState(0);
@@ -14,14 +14,14 @@ const Food = (props) => {
         dispatch({ type: "DE_QUAN", value: props.food })
     }
     return (
-        <div className='col-12' key={props.food.id}>
+        <div className='col-12'>
             <div className='foodCont d-flex align-items-center justify-content-between'>
                 <div>
-                    <p className='foodName'>{props.food.foodname}</p>
-                    <p className='foodPrice'>$ {props.food.price}</p>
+                    <p className='foodName'>{props.food.product_name}</p>
+                    <p className='foodPrice'>$ {props.food.product_price[0].product_price}</p>
                 </div>
                 <div className='pos-relative'>
-                    <span className='foodImg'><img className='img-fluid' src={`/assets/images/${props.food.filename}`} /></span>
+                    <span className='foodImg'><img className='img-fluid' src={props.food.product_image} alt={props.food.product_name} /></span>
                     <div className='btnCont'>
                         {foodCount > 0 ? <div className='indeCont'>
                             <button onClick={decreaseFoodCount}>-</button>

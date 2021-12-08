@@ -17,10 +17,13 @@ const FoodList = (props) => {
                     </div>
                     {props.noRecord ? <div className='col-8 mt-5'><h5 className='text-center text-dark'>No record found</h5></div> : null}
 
-                    <div className='col-8'><div className='row'>{props.foods.map(food => {
-                        return <Food key={food.id} food={food} />
-                    })}
-                    </div></div>
+                    <div className='col-8'>
+                        <div className='row'>
+                            {props.foods.map(food => {
+                                return <Food key={food.product_id} food={food} />
+                            })}
+                        </div>
+                    </div>
 
                     <div className='col-4'>
                         <Cart />

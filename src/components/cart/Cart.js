@@ -8,7 +8,7 @@ const Cart = (props) => {
         <div className={props.from === "route" ? "p-5" : null}>
             {props.from === "route" ? <h5 className='subHeading mb-4'>Your Cart</h5> : null}
             {cartList.map(item => {
-                return <div className='row py-3 border-bottom' key={item.id}>
+                return <div className='row py-3 border-bottom' key={item.product_id}>
                     <div className='col-9'>{item.foodName}</div>
                     <div className='col-3 text-end'>$ {item.total}</div>
                     {/* <div>{item.count}</div> */}
