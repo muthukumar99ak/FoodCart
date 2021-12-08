@@ -4,7 +4,9 @@ import Header from './components/header/Header';
 import FoodList from './components/food/FoodList';
 
 import { foodList } from './components/foodListJSON';
-import { useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router';
+import Cart from './components/cart/Cart';
+
 
 function App() {
   const [foods, setFoods] = useState(foodList);
@@ -19,8 +21,13 @@ function App() {
 
   return (
     <div>
-      <Header searchFoods={searchFoods} />
-      <FoodList foods={foods} noRecord={noRecord} />
+      {/* <FoodList foods={foods} noRecord={noRecord} /> */}
+      <main>
+        <Routes>
+          <Route path='/' element={<FoodList foods={foods} noRecord={noRecord} searchFoods={searchFoods} />} />
+          <Route path='/checkout' element={<Cart from='route' />} />
+        </Routes>
+      </main>
     </div>
   );
 }

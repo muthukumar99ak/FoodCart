@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { useDispatch, useSelector, connect } from "react-redux";
 
 const Food = (props) => {
     const [foodCount, setFoodCount] = useState(0);
+    const dispatch = useDispatch()
 
     const increaseFoodCount = () => {
         setFoodCount(prevState => prevState + 1)
+        dispatch({ type: "ADD_FOOD", value: props.food })
     }
     const decreaseFoodCount = () => {
         setFoodCount(prevState => prevState - 1)
+        dispatch({ type: "DE_QUAN", value: props.food })
     }
     return (
         <div className='col-12' key={props.food.id}>
@@ -31,4 +35,4 @@ const Food = (props) => {
     )
 }
 
-export default Food;
+export default connect()(Food);
