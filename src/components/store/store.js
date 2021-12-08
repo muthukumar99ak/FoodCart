@@ -40,9 +40,10 @@ const foodReducer = (state = initialState, action) => {
                 // foodCopy.totalQuan = foodCopy.items.length
             }
             return { ...foodCopy }
-    }
 
-    return state;
+        default:
+            return state;
+    }
 }
 
 const store = createStore(foodReducer);
